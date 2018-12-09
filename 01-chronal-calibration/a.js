@@ -24,7 +24,7 @@ while (repeatFound === false){
 }
 
 const firstRepeatFrequency = currentFrequency;
-console.log(firstRepeatFrequency); //558
+console.log(firstRepeatFrequency); //558!
 
 const finalFrequency = input.reduce((sum, change) => sum + change);
 console.log(finalFrequency); //497
