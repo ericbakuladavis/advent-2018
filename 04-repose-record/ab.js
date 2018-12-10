@@ -68,6 +68,8 @@ for (guardID in guards){
     
     guards[guardID].sleepiestMinute = sleepiestMinute;
 
+    // find the sleepiest minute of any guard
+
     if (maxMinuteCount > overallMaxMinuteCount){
         overallMaxMinuteCount = maxMinuteCount;
         overallSleepiestMinute = sleepiestMinute;
@@ -76,17 +78,20 @@ for (guardID in guards){
     
 }
 
+// multiply these to get answer to part 1
+
 // sleepiest guard
 console.log(sleepiestGuard); // #3371
 
 // sleepiest minute of sleepiest guard
 console.log(guards[sleepiestGuard].sleepiestMinute); // 39
 
+
+
+// multiply these to get answer to part 2
+
 // guard with the sleepiest minute of any guard
 console.log(guardWithTheOverallSleepiestMinute); // #1901
 
 // sleepiest minute of any guard 
 console.log(overallSleepiestMinute); // 51
-
-
-
