@@ -42,4 +42,4 @@ for (let i = 0; i < units.length; i++){
     }
 }
 
-console.log(shortestPolymerLength); //
+console.log(shortestPolymerLength); // 4992
