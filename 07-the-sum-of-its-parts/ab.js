@@ -44,24 +44,15 @@ function assembleWithTeam(list, numberOfSteps){
     let order = '';
     const available = [];
     generateInitialAvailableSteps(list, available);
-    // in every second...
     let time = 0;
     while (order.length < numberOfSteps){
-        // give assignments
         idleWorkers = giveAssignments(time, workers, available, idleWorkers);
-        // check on each worker
         workers.forEach((worker) => {
-            // if a worker finishes a step...
             if (worker.status === 'busy' && worker.endTime === time){
-                // add the step to the order of steps list
                 order += worker.currentStep;
-                // mark the step as complete
                 list[worker.currentStep].status = 'complete';
-                // generate new available steps
                 generateNewAvailableSteps(list, available, worker.currentStep);
-                // reset the worker
                 worker.finishAssignment();
-                // add one to the number of idle workers
                 idleWorkers++;
             }
         });
