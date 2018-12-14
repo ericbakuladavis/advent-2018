@@ -23,6 +23,11 @@ let highestLevelOverall = undefined;
 let highestLevelOverallX = undefined;
 let highestLevelOveralY = undefined;
 let highestLevelOverallSize = undefined;
+
+let highest3x3Level = undefined;
+let highest3x3LevelX = undefined;
+let highest3x3LevelY = undefined;
+
 for (let cornerY = 1; cornerY <= 300; cornerY++){
     for (let cornerX = 1; cornerX <= 300; cornerX++){
         let highestLevel = undefined;
@@ -48,6 +53,17 @@ for (let cornerY = 1; cornerY <= 300; cornerY++){
                     highestLevelY = cornerY;
                     highestLevelSize = size;
                 }
+                if (size === 3) {
+                    if (cornerX === 1 && cornerY === 1){
+                        highest3x3Level = totalLevel;
+                        highest3x3LevelX = cornerX;
+                        highest3x3LevelY = cornerY;
+                    } else if (totalLevel > highest3x3Level){
+                        highest3x3Level = totalLevel;
+                        highest3x3LevelX = cornerX;
+                        highest3x3LevelY = cornerY;
+                    }
+                }
             }
         }
         if (cornerY === 1 && cornerX === 1){
@@ -65,7 +81,8 @@ for (let cornerY = 1; cornerY <= 300; cornerY++){
         }
     }
     let number = cornerY / 3;
-    console.log( number.toFixed(1) + '% complete. Current highest is ' + highestLevelOverallX + ',' + highestLevelOveralY + ',' + highestLevelOverallSize);
+    console.log( number.toFixed(1) + '% complete. Current highest is ' + highestLevelOverallX + ',' + highestLevelOveralY + ',' + highestLevelOverallSize + ". Current highest 3x3 is " + highest3x3LevelX + ',' + highest3x3LevelY);
 }
 
-console.log('Final highest is: ' + highestLevelOverallX + ',' + highestLevelOveralY + ',' + highestLevelOverallSize)
+console.log('Final highest is: ' + highestLevelOverallX + ',' + highestLevelOveralY + ',' + highestLevelOverallSize);
+console.log('Final highest 3x3 is: ' + highest3x3LevelX + ',' + highest3x3LevelY);
