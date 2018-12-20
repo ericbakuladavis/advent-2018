@@ -83,7 +83,7 @@ function catalogCarts(input){
 }
 
 function sortCarts(carts){
-    carts.sort(function(a, b) {
+    carts.sort((a, b) => {
         if (a.y > b.y){
             return 1;
         } else if (a.y < b.y){
