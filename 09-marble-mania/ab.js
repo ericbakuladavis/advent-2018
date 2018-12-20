@@ -4,6 +4,7 @@ function playGame(numberOfPlayers, lastMarble){
     let currentPlayer = 2;
     let currentMarble = 1;
     let currentMarbleIndex = 1;
+
     while (currentMarble < lastMarble){
         let newMarble = currentMarble + 1;
         if (newMarble % 23 === 0){
