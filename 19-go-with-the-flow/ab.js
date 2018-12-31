@@ -86,7 +86,7 @@ function runProgram(r, ip, instruction){
         }
         // end speed boost
 
-        // begin progress display 
+        // start progress display 
         if (partTwo && ip === 13){
             const percent = Math.floor((r[2] / r[3]) * 100);
             if (percent > progress){
@@ -97,7 +97,7 @@ function runProgram(r, ip, instruction){
             }
         }
         // end progress display
-        
+
         instruction = input[ip];
         const opcodeName = instruction[0];
         const opcodeFunction = opcodes[opcodeName];
